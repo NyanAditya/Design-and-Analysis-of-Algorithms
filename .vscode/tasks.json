@@ -1,0 +1,20 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build and run C",
+            "type": "shell",
+            "command": "cd \"${fileDirname}\" && gcc \"${fileBasename}\" -o \"${fileBasenameNoExtension}\" && \"./${fileBasenameNoExtension}\" && rm -f \"${fileBasenameNoExtension}\"",
+            "windows": {
+                "command": "cd \"${fileDirname}\" && gcc \"${fileBasename}\" -o \"${fileBasenameNoExtension}.exe\" && \"./${fileBasenameNoExtension}.exe\" && rm \"${fileBasenameNoExtension}.exe\" -Force"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        }
+    ]
+}
